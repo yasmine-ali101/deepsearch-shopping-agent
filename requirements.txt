@@ -1,0 +1,8 @@
+cohere>=5.0,<6.0
+sentence-transformers>=3.0
+faiss-cpu>=1.8
+numpy>=1.26
+requests>=2.31
+beautifulsoup4>=4.12
+gradio>=4.44
+python-dotenv>=1.0
