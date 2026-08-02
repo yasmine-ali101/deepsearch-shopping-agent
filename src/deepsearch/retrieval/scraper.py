@@ -42,7 +42,7 @@ def fetch_description_and_category(url: str) -> tuple[str | None, str | None]:
     """Open a product page and pull its feature bullets and breadcrumb trail.
 
     Both fields feed the embedding text, so a miss here degrades ranking quality
-    but must never abort the crawl — hence the broad except.
+    but must never abort the crawl, hence the broad except.
     """
     try:
         response = _get(url)
@@ -144,7 +144,7 @@ def search(keyword: str, k: int = 5, country: str | None = None) -> list[Product
 def multi_search(keywords: list[str], k: int = 5, country: str | None = None) -> list[Product]:
     """Run `search` across every rewritten query, deduplicating by ASIN.
 
-    One failed keyword must not sink the round — a CAPTCHA on query 4 of 6 still
+    One failed keyword must not sink the round, a CAPTCHA on query 4 of 6 still
     leaves five usable result sets.
     """
     collected: list[Product] = []

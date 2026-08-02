@@ -30,6 +30,17 @@ class Settings:
     relevance_threshold: float = float(os.getenv("RELEVANCE_THRESHOLD", "0.54"))
     top_k_per_query: int = int(os.getenv("TOP_K_PER_QUERY", "3"))
 
+    # Arabic queries score systematically lower than semantically identical
+    # English ones when the catalogue text is English, because the shared
+    # embedding space is not perfectly isotropic across scripts. Measured on
+    # 10 matched query pairs against the same products: mean 0.678 English
+    # against 0.571 Arabic, a gap of 0.107. A single fixed threshold therefore
+    # discards the Arabic rewrites at a much higher rate (at 0.54, English
+    # passes 10/10 and Arabic 7/10), silently defeating the bilingual expansion.
+    #
+    # Re-measure for your own catalogue with scripts/calibrate_threshold.py.
+    arabic_threshold_offset: float = float(os.getenv("ARABIC_THRESHOLD_OFFSET", "0.11"))
+
     # --- Scraper ---
     amazon_country: str = os.getenv("AMAZON_COUNTRY", "eg")
     request_timeout: int = int(os.getenv("REQUEST_TIMEOUT", "15"))

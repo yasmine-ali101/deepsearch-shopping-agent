@@ -1,4 +1,4 @@
-"""Tests for Agent 2 — the relevance gate.
+"""Tests for Agent 2, the relevance gate.
 
 These run offline: no Cohere key, no network, no model download.
 """

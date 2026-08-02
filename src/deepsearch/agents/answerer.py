@@ -1,8 +1,8 @@
-"""Agent 3 — Answer Generator.
+"""Agent 3, Answer Generator.
 
 Takes the products Agent 2 approved and writes the user-facing reply. The
 deterministic `format_products` summary is built first and passed to the model as
-grounding, so the LLM is rewriting facts rather than inventing them — and if the
+grounding, so the LLM is rewriting facts rather than inventing them, and if the
 Cohere call fails, that summary is still a usable answer on its own.
 """
 

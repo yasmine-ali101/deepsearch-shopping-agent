@@ -1,4 +1,4 @@
-"""Pipeline orchestration — the agentic loop that ties the three agents together.
+"""Pipeline orchestration, the agentic loop that ties the three agents together.
 
     query -> Agent 1 (rewrite) -> retrieve -> embed+FAISS -> Agent 2 (evaluate)
                   ^                                              |
@@ -106,7 +106,9 @@ class ShoppingPipeline:
                 continue
 
             hits = self._index_factory(products).search(queries, k=k)
-            sufficient = evaluate(products, hits, threshold=threshold)
+            # `queries` is passed so each rewrite is judged against a threshold
+            # matched to its script; see the evaluator module docstring.
+            sufficient = evaluate(products, hits, threshold=threshold, queries=queries)
 
             if sufficient:
                 logger.info("Round %d accepted %d products", round_index, len(sufficient))

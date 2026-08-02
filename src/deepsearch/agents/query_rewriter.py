@@ -1,4 +1,4 @@
-"""Agent 1 — Query Rewriter.
+"""Agent 1, Query Rewriter.
 
 Turns one messy shopping query into six focused retrieval queries (3 English,
 3 Arabic), then strips filler words that hurt keyword search.

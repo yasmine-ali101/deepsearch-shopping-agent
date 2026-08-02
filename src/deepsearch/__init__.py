@@ -1,4 +1,4 @@
-"""Deep Search — a multi-agent RAG shopping assistant."""
+"""Deep Search, a multi-agent RAG shopping assistant."""
 
 from .models import Product
 from .pipeline import PipelineResult, ShoppingPipeline, run_pipeline

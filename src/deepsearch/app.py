@@ -28,7 +28,7 @@ def build_ui() -> gr.Blocks:
 
     def on_search(user_query: str, country: str, threshold: float, max_rounds: float):
         if pipeline is None:
-            return "**Configuration error** — `COHERE_API_KEY` is not set. Copy `.env.example` to `.env` and add your key."
+            return "**Configuration error**, `COHERE_API_KEY` is not set. Copy `.env.example` to `.env` and add your key."
         if not user_query.strip():
             return "Please enter a shopping query."
         try:

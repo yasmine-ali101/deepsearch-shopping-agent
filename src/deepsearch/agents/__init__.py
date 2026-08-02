@@ -1,13 +1,20 @@
 """Agent implementations.
 
 `evaluate` is imported eagerly (numpy only). The LLM-backed agents are exposed
-lazily so that importing this package doesn't require the `cohere` client — the
+lazily so that importing this package doesn't require the `cohere` client, the
 evaluator and its tests have no business paying for that.
 """
 
-from .evaluator import evaluate, filter_by_threshold
+from .evaluator import evaluate, filter_by_threshold, is_arabic, threshold_for
 
-__all__ = ["evaluate", "filter_by_threshold", "QueryRewriter", "Answerer"]
+__all__ = [
+    "evaluate",
+    "filter_by_threshold",
+    "is_arabic",
+    "threshold_for",
+    "QueryRewriter",
+    "Answerer",
+]
 
 
 def __getattr__(name: str):

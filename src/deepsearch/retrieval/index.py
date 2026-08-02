@@ -1,7 +1,7 @@
 """Dense retrieval over scraped products with FAISS.
 
 Embeddings come from BAAI/bge-m3, chosen because it handles Arabic and English
-in one shared vector space — the Arabic half of Agent 1's rewrites would be
+in one shared vector space, the Arabic half of Agent 1's rewrites would be
 useless against an English-only encoder.
 """
 
