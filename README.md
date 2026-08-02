@@ -10,7 +10,7 @@ refined query when the evidence is not good enough.
   <img alt="Cohere" src="https://img.shields.io/badge/LLM-Cohere%20command--r--plus-39594D">
   <img alt="FAISS" src="https://img.shields.io/badge/vector%20search-FAISS-0467DF">
   <img alt="Gradio" src="https://img.shields.io/badge/UI-Gradio-F97316">
-  <img alt="Tests" src="https://img.shields.io/badge/tests-21%20passing-16A34A">
+  <img alt="Tests" src="https://github.com/yasmine-ali101/deepsearch-shopping-agent/actions/workflows/tests.yml/badge.svg">
 </p>
 
 ---
